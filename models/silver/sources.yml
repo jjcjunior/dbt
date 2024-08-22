@@ -1,0 +1,144 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: Esta é uma replica do BD produção TOTVS
+    tables:
+      - name: SA1010
+        description: Esta é a tabela de clientes
+        columns:
+          - name: "A1_COD"
+            description: Esta coluna identifica o codigo do cliente
+          - name: "A1_LOJA"
+            description: Esta coluna identifica a loja do cliente
+          - name: "A1_NOME"
+            description: Esta coluna identifica o nome do cliente
+          - name: "A1_EST"
+            description: Esta coluna identifica a união federativa do cliente
+          - name: "A1_MUN"
+            description: Esta coluna identifica o municipio do cliente
+          - name: "D_E_L_E_T_"
+            description: verifica se o registro esta deletado (deleção logica)
+      - name: SB1010
+        description: Esta é a tabela de produtos
+        columns:
+          - name: "B1_COD"
+            description: esta coluna identifica o codigo do produto
+          - name: "B1_ZBM"
+            description: esta coluna identifica o codigo do subgrupo do produto
+          - name: "B1_DESC"
+            description: esta coluna identifica a descricao (nome) do produto
+          - name: "D_E_L_E_T_" 
+            description: verifica se o registro esta deletado (deleção logica)
+          - name: "B1_FILIAL"
+            description: esta coluna identifica a filial do produto
+      - name: SA3010
+        description: Esta é a tabela de vendedor
+        columns:
+          - name: "A3_COD"
+            description: esta coluna identifica o codigo do vendedor
+          - name: "A3_NOME"
+            description: esta coluna identifica o nome do vendedor
+          - name: "A3_EST"
+            description: esta coluna identifica a uniao federativa do vendedor
+          - name: "A3_MUN"
+            description: esta coluna identifica o municipio do vendedor
+          - name: "A3_TIPO"
+            description: esta coluna identifica o tipo do vendedor (Interno, Externo ...)
+          - name: "A3_GERENC"
+            description: esta coluna identifica o gerente do vendedor
+          - name: "A3_ADMISS"
+            description: esta coluna identifica a data de admissao do vendedor
+          - name: "A3_MSBLQL"
+            description: esta coluna identifica se o vendedor esta bloqueado
+          - name: "A3_NOMSUP"
+            description: esta coluna identifica o nome supervisor do vendedor
+          - name: "D_E_L_E_T_"
+            description: verifica se o registro esta deletado (deleção logica)
+      - name: SA4010
+        description: Esta é a tabela de transportadora
+        columns:
+          - name: "A4_COD"
+            description: esta coluna identifica o codigo da transportadora
+          - name: "A4_NOME"
+            description: esta coluna identifica o nome da transportadora
+          - name: "D_E_L_E_T_"
+            description: verifica se o registro esta deletado (deleção logica)
+      - name: ZBM010
+        description: Esta é a tabela de subgrupo do produto (personalizada)
+        columns:
+          - name: "ZBM_COD"
+            description: esta coluna identifica o codigo do subgrupo
+          - name: "ZBM_DESC"
+            description: esta coluna identifica o nome do subgrupo
+          - name: "D_E_L_E_T_"
+            description: verifica se o registro esta deletado (deleção logica)
+      - name: SC5010
+        description: Esta é a tabela de pedidos (cabeçalho)
+        columns:
+          - name: "C5_EMISSAO"
+            description: esta coluna identifica a data de emissao do pedido
+          - name: "C5_CONDPAG"
+            description: esta coluna identifica a condição de pagamento do pedido
+          - name: "C5_VEND1"
+            description: esta coluna identifica a vendedor do pedido (nesse caso o representante comercial)
+          - name: "C5_VEND2"
+            description: esta coluna identifica a vendedor interno do pedido (nesse caso o apoio de venda comercial)
+          - name: "C5_VEND3"
+            description: esta coluna identifica a vendedor interno do pedido (nesse caso o apoio de venda de peças comercial)
+          - name: "C5_TPFRETE"
+            description: esta coluna identifica o tipo de frete do pedido
+          - name: "C5_ZFSAIDA"
+            description: esta coluna identifica data de saida do pedido
+          - name: "C5_ZMENSPD"
+            description: esta coluna identifica a mensagem (observação) do pedido
+          - name: "C5_ZFRETEC"
+            description: esta coluna identifica o valor de frete do pedido 
+          - name: "C5_TRANSP"
+            description: esta coluna identifica o codigo da transportadora do pedido
+          - name: "D_E_L_E_T_"
+            description: verifica se o registro esta deletado (deleção logica)
+      - name: SC6010
+        description: Esta é a tabela de pedidos (itens do pedido)
+        columns:
+          - name: "C6_PRODUTO"
+            description: esta coluna identifica o codigo do produto do pedido
+          - name: "C6_NOTA"
+            description: esta coluna identifica nota fiscal do produto do pedido
+          - name: "C6_DATFAT"
+            description: esta coluna identifica data de faturamento do produto do pedido
+          - name: "C6_NUM"
+            description: esta coluna identifica o numero do pedido
+          - name: "C6_LOCAL"
+            description: esta coluna identifica o armazem (estoque) que o produto saiu
+          - name: "C6_QTDVEN"
+            description: esta coluna identifica a quantidade do produto do pedido
+          - name: "C6_ITEM"
+            description: esta coluna identifica qual o item do produto do pedido
+          - name: "C6_QTDENT"
+            description: esta coluna identifica a quantidade do produto entregue (entrega parcial)
+          - name: "C6_PRCVEN"
+            description: esta coluna identifica o preço de venda do produto do pedido
+          - name: "C6_VALOR"
+            description: essa coluna identifica o valor total do produto (C6_PRCVEN * C6_QTDVEN)
+          - name: "C6_CLI"
+            description: essa coluna identifica o codigo do cliente
+          - name: "C6_LOJA"
+            description: essa coluna identifica a loja do cliente 
+          - name: "C6_BLQ"
+            description: essa coluna identifica o status do pedido
+          - name: "C6_FILIAL"
+            description: essa coluna identifica a filial do cliente
+          - name: "C6_TES"
+            description: essa coluna identifica o tipo de saida do item
+          - name: "D_E_L_E_T_"
+            description: verifica se o registro esta deletado (deleção logica)
+      - name: SF4010
+        description: esta é a tabela de tipos de doc de entrada e saida
+        columns:
+          - name: "F4_CODIGO"
+            description: essa coluna identifica o codigo do doc
+          - name: "F4_DUPLIC"
+            description: essa coluna identifica se houve duplicata ou nao
+          - name: "D_E_L_E_T_"
+            description: verifica se o registro esta deletado (deleção logica)
