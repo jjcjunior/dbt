@@ -20,7 +20,7 @@ with source_data as (
 
 )
 
-select codigo,descricao, subgrupo
+select codigo,descricao, CONCAT(CONCAT(codigo,' - '),descricao) as cod_descri, subgrupo
 from source_data
 where "D_E_L_E_T_" <> '*' AND filial = '01'
 

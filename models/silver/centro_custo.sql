@@ -11,20 +11,15 @@
 
 with source_data as (
 
-    select 
-        "A1_COD" as codigo
-        ,"A1_NOME" as nome
-        ,"A1_LOJA"  as loja
-        ,"A1_EST" as uf
-        ,"A1_MUN" as municipio
-        ,"A1_CGC" as "cpf/cnpj"
-        ,"D_E_L_E_T_" 
-    from {{ source('bronze','SA1010')}}
-
+    SELECT "CTT_CUSTO" as codigo
+    , "CTT_DESC01" as descricao
+    ,"D_E_L_E_T_" 
+    FROM {{ source('bronze', 'CTT010')}}
 )
 
-
-select concat(codigo,loja) as id, codigo,loja,nome,uf,municipio,"cpf/cnpj"
+select 
+    codigo
+    ,descricao
 from source_data
 where "D_E_L_E_T_" <> '*'
 

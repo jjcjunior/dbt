@@ -9,9 +9,9 @@
 
 {{ config(materialized='table',schema="gold") }}
 
-select  ROW_NUMBER () OVER ( ORDER BY id ) as pk_cliente, id, codigo,loja,nome,uf,municipio,"cpf/cnpj", CONCAT(uf,REPLACE(municipio,' ','')) as localizacao
-from {{ref('clientes')}} 
-order by id
+select  ROW_NUMBER () OVER ( ORDER BY codigo ) as pk_usuario_ncf, codigo, nome,apelido
+from {{ref('usuarios_ncf')}} 
+order by codigo
 
 /*
     Uncomment the line below to remove records with null `id` values

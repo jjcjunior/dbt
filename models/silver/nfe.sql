@@ -12,21 +12,21 @@
 with source_data as (
 
     select 
-        "A1_COD" as codigo
-        ,"A1_NOME" as nome
-        ,"A1_LOJA"  as loja
-        ,"A1_EST" as uf
-        ,"A1_MUN" as municipio
-        ,"A1_CGC" as "cpf/cnpj"
-        ,"D_E_L_E_T_" 
-    from {{ source('bronze','SA1010')}}
+        "F2_DOC" numero_nf
+        ,"F2_EMISSAO" data_emissao
+        ,"F2_CLIENTE" cod_cliente
+        ,"F2_LOJA"  loja_cliente
+        ,"F2_DUPL" duplicata
+        ,"F2_TIPO" tipo
+        ,"D_E_L_E_T_"
+    from {{ source('bronze','SF2010')}}
 
 )
 
 
-select concat(codigo,loja) as id, codigo,loja,nome,uf,municipio,"cpf/cnpj"
+select numero_nf, data_emissao::DATE ,concat(cod_cliente,loja_cliente) as id_cliente,duplicata,tipo
 from source_data
-where "D_E_L_E_T_" <> '*'
+where "D_E_L_E_T_" <> '*' AND duplicata <> ' ' AND tipo <> 'D'
 
 /*
     Uncomment the line below to remove records with null `id` values

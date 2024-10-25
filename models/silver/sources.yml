@@ -17,6 +17,8 @@ sources:
             description: Esta coluna identifica a união federativa do cliente
           - name: "A1_MUN"
             description: Esta coluna identifica o municipio do cliente
+          - name: "A1_CGC"
+            description: Esta coluna identifica o CPF/CNPJ do cliente
           - name: "D_E_L_E_T_"
             description: verifica se o registro esta deletado (deleção logica)
       - name: SB1010
@@ -98,6 +100,8 @@ sources:
             description: esta coluna identifica o codigo da transportadora do pedido
           - name: "D_E_L_E_T_"
             description: verifica se o registro esta deletado (deleção logica)
+          - name: "C5_NOTA"
+            description: esta é a coluna da NF do pedido
       - name: SC6010
         description: Esta é a tabela de pedidos (itens do pedido)
         columns:
@@ -142,3 +146,208 @@ sources:
             description: essa coluna identifica se houve duplicata ou nao
           - name: "D_E_L_E_T_"
             description: verifica se o registro esta deletado (deleção logica)
+      - name: DB3010
+        description: esta é a tabela de itens do doc de recebimento
+        columns:
+          - name: "DB3_CODPRO"
+            description: ""
+          - name: "DB3_QTDAPR"
+            description: ""
+          - name: "DB3_NRAVRC"
+            description: ""
+          - name: "DB3_ITEM"
+            description: ""
+          - name: "DB3_DTVALD"
+            description: ""
+          - name: "DB3_CERTIF"
+            description: ""
+          - name: "DB3_NUMPC"
+            description: ""
+          - name: "DB3_ITEMPC"
+            description: ""
+          - name: "DB3_QUANT"
+            description: ""
+          - name: "DB3_NRAVRC"
+            description: ""
+          - name: "D_E_L_E_T_"
+            description: verifica se o registro esta deletado (deleção logica)
+      - name: DB1010
+        description: esta é a tabela de Aviso de Recebimento de Carga
+        columns:
+          - name: "DB1_MANIFE"
+            description: ""
+          - name: "DB1_ENTREG"
+            description: ""
+          - name: "DB1_HORA1"
+            description: ""
+          - name: "DB1_NRAVRC"
+            description: ""
+          - name: "D_E_L_E_T_"
+            description: ""
+      - name: DB2010
+        descritpion: esta é a tabela de Cabecalho Doc de Recebimento
+        columns:
+          - name: "DB2_DOC"
+            description: ""
+          - name: "DB2_CLIFOR"
+            description: ""
+          - name: "DB2_LOJA"
+            description: ""
+          - name: "DB2_EMISSA"
+            description: "" 
+          - name: "DB2_CRACHA"
+            description: ""
+          - name: "DB2_FILIAL"
+            description: ""
+          - name: "DB2_NRAVRC"
+            description: ""
+          - name: "D_E_L_E_T_"
+            description: ""
+      - name: SC7010
+        description: esta é a tabela de Pedido de Compra / Aut.Entrega
+        columns:
+          - name: "C7_NUM"
+            description: ""
+          - name: "C7_EMISSAO"
+            description: ""  
+          - name: "C7_FILIAL"
+            description: ""
+          - name: "C7_ITEM"
+            description: ""
+          - name: "C7_PRODUTO"
+            description: ""
+          - name: "C7_UM"
+            description: ""
+          - name: "C7_QUANT"
+            description: ""
+          - name: "C7_PRECO"
+            description: ""
+          - name: "C7_TOTAL"
+            description: ""
+          - name: "C7_IPI"
+            description: ""
+          - name: "C7_DATPRF"
+            description: ""
+          - name: "D_E_L_E_T_"
+            description: ""
+      - name: funcionario
+        description: ""
+        columns: 
+          - name: cartao
+          - name: funcionario
+          - name: funcao
+      - name: cert_status
+        description: ""
+        columns: 
+          - name: diretorio_arquivo
+          - name: uf
+          - name: cod_fornecedor
+          - name: loja
+          - name: fornecedor
+          - name: genero_cert
+          - name: nome_arquivo
+          - name: validade_cert
+      - name: SA2010
+        description: ""
+        columns: 
+          - name: "A2_COD"
+          - name: "A2_NOME"
+          - name: "A2_NREDUZ"
+          - name: "A2_LOJA"
+          - name: "A2_CGC"
+          - name: "A2_FILIAL"
+          - name: "D_E_L_E_T_"
+      - name: CTT010
+        description: "Esta é a tabela de centro de custo"
+        columns: 
+          - name: "CTT_CUSTO"
+          - name: "CTT_DESC01"
+          - name: "D_E_L_E_T_"
+      - name: QI2010
+        description: "Esta é a tabela de não conformidade"
+        columns: 
+          - name: "QI2_ZRFNC"
+          - name: "QI2_REV"
+          - name: "QI2_TPFIC"
+          - name: "QI2_PRIORI"
+          - name: "QI2_STATUS"
+          - name: "QI2_CODPRO"
+          - name: "QI2_LOJCLI"
+          - name: "QI2_CODCLI"
+          - name: "QI2_ZZSERI"
+          - name: "QI2_ZZGAR"
+          - name: "QI2_ZZTPAT"
+          - name: "QI2_ZZ0S"
+          - name: "QI2_CODORI"
+          - name: "QI2_DDETA"
+          - name: "QI2_CODEFE"
+          - name: "QI2_CODCAT"
+          - name: "QI2_CODACA"
+          - name: "QI2_MAT"
+          - name: "QI2_REGIST"
+          - name: "QI2_CONREA"
+          - name: "QI2_CONTAT"
+          - name: "QI2_FONE"
+          - name: "QI2_ZZKM"
+          - name: "QI2_ZZVMO"
+          - name: "QI2_ZZVOD"
+          - name: "QI2_ZZDPMO"
+      - name: QAA010
+        description: "Esta é a tabela de usuario do modulo de nao conformidade"
+        columns:
+          - name: "QAA_MAT"
+          - name: "QAA_NOME"
+          - name: "QAA_APELID"
+          - name: "D_E_L_E_T_"
+      - name: QI0010
+        description: "Esta é a tabela de classificação de efeito, categoria e origem de nao conformidade"
+        columns:
+          - name: "QI0_CODIGO"
+          - name: "QI0_DESC"
+          - name: "D_E_L_E_T_"
+      - name: ZQ1010
+        description: "Esta é a tabela de garantias usada no relatorio de não conformidade"
+        columns:
+          - name: "ZQ1_FNC"
+          - name: "ZQ1_ITEM"
+          - name: "ZQ1_QTDE"
+          - name: "D_E_L_E_T_"
+          - name: "ZQ1_TPITEM"
+      - name: SF2010
+        description: Esta é a tabela de NF de saida
+        columns:
+          - name: "F2_DOC"
+          - name: "F2_EMISSAO"
+          - name: "F2_EST"
+          - name: "F2_CLIENTE"
+          - name: "F2_LOJA"
+          - name: "F2_DUPL"
+          - name: "F2_TIPO"
+          - name: "D_E_L_E_T_"
+      - name: SD2010
+        description: Esta é a tabela de itens da NF de saida
+        columns:
+          - name: "D2_DOC"
+          - name: "D2_COD"
+          - name: "D2_CF"
+          - name: "D2_QUANT"
+          - name: "D2_TOTAL"
+          - name: "D2_VALIPI"
+          - name: "D2_ICMSRET"
+          - name: "D2_SEGURO"
+          - name: "D2_VALFRE"
+          - name: "D2_DESPESA"
+          - name: "D2_TES"
+          - name: "D_E_L_E_T_"
+      - name: dna
+        description: "Esta é a tabela de garantias usada no relatorio de não conformidade"
+        columns:
+          - name: "MUNICÍPIO BASE IBGE"
+          - name: "MUN. Alterar"
+          - name: "MESOREGIÃO IBGE"
+          - name: "uf"
+          - name: "Nº HABIT. REP."
+          - name: "RENDA PERCAPITA"
+          - name: "potencial"
+
+      
